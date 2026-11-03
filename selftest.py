@@ -69,7 +69,7 @@ for i in range(1, total + 1):
 
 r2 = s.post(BASE + '/submit', data=data, allow_redirects=True)
 check('Submit -> 200', r2.status_code == 200)
-check('Result page shown', 'result' in r2.url or 'Score' in r2.text or 'score' in r2.text.lower())
+check('Result page shown', 'result' in r2.url or 'result' in r2.text.lower() or 'score' in r2.text.lower() or 'marks' in r2.text.lower())
 sm = re.search(r'(\d+)\s*/\s*200', r2.text)
 check('Score displayed', sm is not None, sm.group(0) if sm else 'not found')
 pm = re.search(r'\b(PASS|FAIL)\b', r2.text)

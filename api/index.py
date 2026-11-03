@@ -8,5 +8,6 @@ if root_dir not in sys.path:
 
 from app import app
 
-# Vercel serverless function entrypoint
+# Vercel serverless function entrypoint (supports both 'app' and 'handler')
+handler = app
 
