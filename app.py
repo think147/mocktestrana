@@ -3,6 +3,7 @@ import json
 import random
 import os
 import uuid
+import urllib.parse
 from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -17,31 +18,20 @@ TMP_USERS_FILE = os.path.join('/tmp', 'users.json') if os.name != 'nt' else USER
 
 
 class VercelPathFix:
-    """WSGI middleware to inspect Vercel environment and restore original path."""
+    """WSGI middleware to restore original request path from query string or headers."""
     def __init__(self, wsgi_app):
         self.wsgi_app = wsgi_app
 
     def __call__(self, environ, start_response):
-        # Temporary debug probe: if requesting /api/debug or /debug
-        raw_path = environ.get('PATH_INFO', '')
-        if raw_path == '/debug' or environ.get('HTTP_X_DEBUG'):
-            status = '200 OK'
-            headers = [('Content-Type', 'application/json')]
-            start_response(status, headers)
-            info = {k: str(v) for k, v in environ.items() if not k.startswith('wsgi.')}
-            return [json.dumps(info, indent=2).encode('utf-8')]
-
-        # Look for headers that carry the original path
-        original_path = (
-            environ.get('HTTP_X_MATCHED_PATH') or
-            environ.get('HTTP_X_VERCEL_PATH') or
-            environ.get('HTTP_X_FORWARDED_PATH') or
-            environ.get('HTTP_X_ORIGINAL_PATH') or
-            environ.get('HTTP_X_REWRITE_PATH') or
-            environ.get('HTTP_X_INVOCATION_PATH')
-        )
-        if original_path:
-            environ['PATH_INFO'] = original_path.split('?')[0]
+        query = environ.get('QUERY_STRING', '')
+        if '__path__=' in query:
+            params = urllib.parse.parse_qs(query, keep_blank_values=True)
+            if '__path__' in params:
+                real_path = params.pop('__path__')[0]
+                environ['PATH_INFO'] = real_path if real_path.startswith('/') else '/' + real_path
+                environ['QUERY_STRING'] = urllib.parse.urlencode(params, doseq=True)
+        elif environ.get('PATH_INFO') in ('/api/index', '/api/index.py'):
+            environ['PATH_INFO'] = '/'
         return self.wsgi_app(environ, start_response)
 
 
@@ -83,10 +73,7 @@ def save_users(users):
 
 @app.route('/')
 @app.route('/api/index')
-@app.route('/debug')
 def index():
-    if request.path == '/debug' or request.headers.get('x-debug'):
-        return {k: str(v) for k, v in request.environ.items() if not k.startswith('wsgi.')}
     if 'user' in session:
         return redirect(url_for('dashboard'))
     return redirect(url_for('login'))
