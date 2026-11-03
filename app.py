@@ -16,6 +16,25 @@ USERS_FILE = os.path.join(BASE_DIR, 'users.json')
 TMP_USERS_FILE = os.path.join('/tmp', 'users.json') if os.name != 'nt' else USERS_FILE
 
 
+class VercelPathFix:
+    """WSGI middleware to restore original request path from Vercel's X-Matched-Path header."""
+    def __init__(self, wsgi_app):
+        self.wsgi_app = wsgi_app
+
+    def __call__(self, environ, start_response):
+        matched_path = environ.get('HTTP_X_MATCHED_PATH')
+        if matched_path:
+            path = matched_path.split('?')[0]
+            if path:
+                environ['PATH_INFO'] = path
+        elif environ.get('PATH_INFO') in ('/api/index', '/api/index.py'):
+            environ['PATH_INFO'] = '/'
+        return self.wsgi_app(environ, start_response)
+
+
+app.wsgi_app = VercelPathFix(app.wsgi_app)
+
+
 def load_questions():
     with open(QUESTIONS_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
@@ -50,6 +69,7 @@ def save_users(users):
 
 
 @app.route('/')
+@app.route('/api/index')
 def index():
     if 'user' in session:
         return redirect(url_for('dashboard'))
