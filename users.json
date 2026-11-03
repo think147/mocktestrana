@@ -1,0 +1,615 @@
+{
+  "Rana": {
+    "password": "admin",
+    "tests": [
+      {
+        "score": 0,
+        "total": 100,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T12:05:19.846861",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T12:06:49.249062",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T12:10:58.850964",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T12:19:55.313560",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T12:28:00.842591",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T12:30:09.014693",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T13:24:37.145351",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:04:32.628923",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:09:54.314576",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:12:37.967899",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:13:12.537357",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:16:32.219827",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:17:05.227127",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:20:16.729408",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:27:14.656086",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:32:18.126517",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:35:22.028491",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:36:16.031371",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:42:03.185509",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:52:52.935997",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:54:20.558860",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:56:33.463517",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T15:58:01.736710",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:00:57.862400",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:01:01.460911",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:03:36.660364",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:14:59.825426",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:34:53.294854",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:35:42.643931",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:36:44.008834",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:42:06.564412",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T16:43:13.259172",
+        "status": "FAIL"
+      },
+      {
+        "score": 52,
+        "total": 200,
+        "percentage": 26.0,
+        "timestamp": "2026-05-25T16:45:14.806692",
+        "status": "FAIL"
+      },
+      {
+        "score": 62,
+        "total": 200,
+        "percentage": 31.0,
+        "timestamp": "2026-05-25T16:46:52.967330",
+        "status": "FAIL"
+      },
+      {
+        "score": 62,
+        "total": 200,
+        "percentage": 31.0,
+        "timestamp": "2026-05-25T16:48:51.112250",
+        "status": "FAIL"
+      },
+      {
+        "score": 62,
+        "total": 200,
+        "percentage": 31.0,
+        "timestamp": "2026-05-25T16:48:53.373424",
+        "status": "FAIL"
+      },
+      {
+        "score": 62,
+        "total": 200,
+        "percentage": 31.0,
+        "timestamp": "2026-05-25T16:51:33.843879",
+        "status": "FAIL"
+      },
+      {
+        "score": 62,
+        "total": 200,
+        "percentage": 31.0,
+        "timestamp": "2026-05-25T16:51:38.232583",
+        "status": "FAIL"
+      },
+      {
+        "score": 62,
+        "total": 200,
+        "percentage": 31.0,
+        "timestamp": "2026-05-25T16:51:42.766193",
+        "status": "FAIL"
+      },
+      {
+        "score": 6,
+        "total": 200,
+        "percentage": 3.0,
+        "timestamp": "2026-05-25T16:51:53.022857",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T09:21:47.115222",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T09:26:18.545852",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T09:26:47.578507",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T09:29:28.109283",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T12:32:50.821918",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T14:45:19.493388",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T14:45:46.887435",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T14:57:07.832736",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T14:59:55.596014",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T15:14:59.638330",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T15:25:15.376785",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T15:32:37.879250",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-27T10:55:23.364971",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-27T10:56:17.051182",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-27T11:04:02.944433",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-27T15:42:15.548239",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-27T15:58:51.878302",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "senthil": {
+    "password": "Abc1",
+    "tests": [
+      {
+        "score": 0,
+        "total": 100,
+        "percentage": 0.0,
+        "timestamp": "2026-05-25T11:39:04.070624",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "abc": {
+    "password": "1234",
+    "tests": []
+  },
+  "testuser": {
+    "password": "testpass",
+    "tests": [
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-05-26T13:41:28.914799",
+        "status": "FAIL"
+      },
+      {
+        "score": 2,
+        "total": 2,
+        "percentage": 100.0,
+        "timestamp": "2026-05-26T13:59:17.547625",
+        "status": "PASS"
+      }
+    ]
+  },
+  "Mithilesh": {
+    "password": "admin",
+    "tests": []
+  },
+  "Rana Shivam": {
+    "password": "1234",
+    "tests": [
+      {
+        "score": 8,
+        "total": 200,
+        "percentage": 4.0,
+        "timestamp": "2026-07-30T14:06:26.110368",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-07-30T14:46:13.135403",
+        "status": "FAIL"
+      },
+      {
+        "score": 66,
+        "total": 200,
+        "percentage": 33.0,
+        "timestamp": "2026-07-30T14:55:57.739871",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "shivraj": {
+    "password": "Shivraj1",
+    "tests": [
+      {
+        "score": 24,
+        "total": 200,
+        "percentage": 12.0,
+        "timestamp": "2026-07-30T14:39:45.779485",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "mithilesh.bipard@gmail.com": {
+    "password": "12345",
+    "tests": [
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-07-30T15:18:08.269214",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "bipard": {
+    "password": "Bipard",
+    "tests": []
+  },
+  "BIPARD": {
+    "password": "12345",
+    "tests": [
+      {
+        "score": 8,
+        "total": 200,
+        "percentage": 4.0,
+        "timestamp": "2026-08-01T15:51:06.461164",
+        "status": "FAIL"
+      }
+    ]
+  },
+  "selftest_user": {
+    "password": "pass1234",
+    "tests": [
+      {
+        "score": 200,
+        "total": 200,
+        "percentage": 100.0,
+        "timestamp": "2026-11-03T09:41:05.045951",
+        "status": "PASS"
+      }
+    ]
+  },
+  "selftest_bot": {
+    "password": "test1234",
+    "tests": [
+      {
+        "score": 200,
+        "total": 200,
+        "percentage": 100.0,
+        "timestamp": "2026-11-03T09:41:58.093204",
+        "status": "PASS"
+      }
+    ],
+    "roll": "C0B7E2CD-B7FC-"
+  },
+  "Rana Jee": {
+    "password": "Rana@123",
+    "tests": [
+      {
+        "score": 16,
+        "total": 200,
+        "percentage": 8.0,
+        "timestamp": "2026-11-03T09:44:35.583209",
+        "status": "FAIL"
+      },
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-11-03T10:10:46.653460",
+        "status": "FAIL"
+      },
+      {
+        "score": 8,
+        "total": 200,
+        "percentage": 4.0,
+        "timestamp": "2026-11-03T10:14:15.475131",
+        "status": "FAIL"
+      }
+    ],
+    "roll": "0379B792-02B4-"
+  },
+  "Candidate_49be4e": {
+    "password": "bipard123",
+    "tests": [
+      {
+        "score": 4,
+        "total": 200,
+        "percentage": 2.0,
+        "timestamp": "2026-11-03T10:03:01.223872",
+        "status": "FAIL"
+      }
+    ],
+    "roll": "E8DB33A6-1304-"
+  },
+  "Candidate_b47f0f": {
+    "password": "bipard123",
+    "tests": [
+      {
+        "score": 2,
+        "total": 200,
+        "percentage": 1.0,
+        "timestamp": "2026-11-03T10:11:02.986926",
+        "status": "FAIL"
+      }
+    ],
+    "roll": "8FB00D41-13F8-"
+  },
+  "bot_6da6f1": {
+    "password": "test1234",
+    "tests": [
+      {
+        "score": 200,
+        "total": 200,
+        "percentage": 100.0,
+        "timestamp": "2026-11-03T10:13:30.662105",
+        "status": "PASS"
+      }
+    ],
+    "roll": "8D4490FB-8A87-"
+  },
+  "Candidate_51b6d0": {
+    "password": "bipard123",
+    "tests": [
+      {
+        "score": 0,
+        "total": 200,
+        "percentage": 0.0,
+        "timestamp": "2026-11-03T10:14:05.528656",
+        "status": "FAIL"
+      }
+    ],
+    "roll": "0B41A538-524E-"
+  }
+}

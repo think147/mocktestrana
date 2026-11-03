@@ -1,0 +1,6 @@
+{
+  "name": "mocktestrana",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/index" }
+  ]
+}

@@ -1,0 +1,7 @@
+.venv/
+.vercel/
+__pycache__/
+*.pyc
+BIPARD.pdf
+BIPARD_2547_Questions.pdf
+scratch/

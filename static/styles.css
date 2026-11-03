@@ -1,0 +1,38 @@
+body { font-family: Arial, sans-serif; background:#f4f6f7; margin:0; padding:0 }
+.container { max-width:900px; margin:40px auto; background:white; padding:24px; border-radius:6px; box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+.btn { display:inline-block; padding:10px 16px; background:#2c8ebb; color:white; text-decoration:none; border-radius:4px }
+.wrap { display:flex; gap:20px; padding:20px }
+.main { flex:1; background:white }
+.sidebar { width:320px; background:#fff; padding:12px; border-radius:6px; height:80vh; overflow:auto }
+.question { padding:18px; border-bottom:1px solid #eee; background:#fdfefe; border-radius:6px }
+.q-header { font-weight:bold }
+.options label { display:block; margin:6px 0 }
+.grid { display:flex; flex-wrap:wrap; gap:6px }
+.pal { width:36px; height:28px; border-radius:4px; border:1px solid #ccc; background:#f0f0f0; cursor:pointer }
+.form-actions { margin:16px 0 }
+.primary { background:#28a745 }
+.controls { margin-top:12px; display:flex; gap:8px; flex-wrap:wrap }
+.opt-label.selected { background:#28a745; color:#fff; border-color:#28a745; }
+.opt-label input { margin-right:8px }
+.no-options { color:#888; padding:12px }
+.legend { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px }
+.legend-item { font-size:13px; color:#666 }
+.box { display:inline-block; width:16px; height:12px; margin-right:6px; border-radius:3px; vertical-align:middle }
+.not-visited { background:#dcdcdc }
+.answered { background:#28a745 }
+.review { background:#007bff }
+.current { background:#ffd24d }
+.visited { background:#e0e0e0 }
+.pal.current { outline:3px solid #ffd24d }
+.pal.answered { background:#28a745; color:white }
+.pal.review { background:#007bff; color:white }
+.pal.not-visited { background:#f0f0f0 }
+.pal.visited { background:#f7f7f7 }
+
+/* Highlight correct and wrong answers in result view */
+.correct-ans { background:#28a745; color:#fff; font-weight:bold; padding:4px; border-radius:4px; }
+.wrong-ans   { background:#c82333; color:#fff; font-weight:bold; padding:4px; border-radius:4px; }
+.danger      { background:#c82333; color:#fff; font-weight:bold; padding:4px; border-radius:4px; }
+
+.pass { color: #155724; background: #d4edda; padding:8px; display:inline-block; border-radius:4px }
+.fail { color: #721c24; background: #f8d7da; padding:8px; display:inline-block; border-radius:4px }

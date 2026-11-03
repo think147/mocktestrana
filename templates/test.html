@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mock Test - 100 Questions</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <style>
+    /* ── Confirmation Modal (Matches Images 2 & 3) ─────────────────── */
+    #finishModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 99999;
+      overflow-y: auto;
+      padding: 20px 10px;
+    }
+    .modal-dialog {
+      background: #ffffff;
+      max-width: 1100px;
+      margin: 20px auto;
+      border-radius: 4px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.4);
+      border: 1px solid #008080;
+      overflow: hidden;
+    }
+    .modal-top-header {
+      background: #00796b;
+      color: #ffffff;
+      padding: 10px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .modal-close-btn {
+      background: #ffffff;
+      color: #004d40;
+      border: 1px solid #ccc;
+      padding: 4px 14px;
+      cursor: pointer;
+      font-size: 12px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .modal-close-btn:hover {
+      background: #f0f0f0;
+    }
+
+    .modal-content-area {
+      padding: 16px 20px;
+      background: #ffffff;
+    }
+
+    .attempt-summary-heading {
+      text-align: center;
+      font-size: 17px;
+      font-weight: bold;
+      color: #27ae60;
+      text-decoration: underline;
+      margin-bottom: 16px;
+    }
+
+    /* 2 rows of 5 tables each (10 tables total) */
+    .tables-matrix {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    @media (max-width: 900px) {
+      .tables-matrix {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .sub-table-card {
+      border: 1px solid #dcdcdc;
+      background: #ffffff;
+    }
+    .sub-table-card table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 11px;
+    }
+    .sub-table-card th {
+      background: #ffffff;
+      padding: 5px 6px;
+      border-bottom: 1px solid #cccccc;
+      border-right: 1px solid #eeeeee;
+      font-weight: bold;
+      color: #111;
+      text-align: center;
+    }
+    .sub-table-card td {
+      padding: 4px 6px;
+      border-bottom: 1px solid #f0f0f0;
+      border-right: 1px solid #f0f0f0;
+      text-align: center;
+      height: 20px;
+    }
+    .sub-table-card tr:last-child td {
+      border-bottom: none;
+    }
+    .sub-table-card td.q-cell {
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      width: 50%;
+    }
+    .sub-table-card td.q-cell:hover {
+      background: #e8f5e9;
+      color: #00796b;
+    }
+    .sub-table-card td.ans-cell {
+      color: #111;
+      font-weight: bold;
+      width: 50%;
+    }
+
+    /* Bilingual confirmation prompt */
+    .submission-prompt {
+      text-align: center;
+      margin: 18px 0 10px 0;
+      line-height: 1.6;
+    }
+    .prompt-en-main {
+      font-size: 15px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .prompt-en-sub {
+      font-size: 13px;
+      color: #555;
+    }
+    .prompt-hi-main {
+      font-size: 15px;
+      font-weight: bold;
+      color: #1a1a1a;
+      margin-top: 4px;
+    }
+    .prompt-hi-sub {
+      font-size: 13px;
+      color: #555;
+    }
+
+    /* Modal buttons */
+    .modal-bottom-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      padding: 12px 20px;
+      background: #fbfbfb;
+      border-top: 1px solid #e0e0e0;
+    }
+    .btn-submit-red {
+      background: #d32f2f;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn-submit-red:hover {
+      background: #b71c1c;
+    }
+    .btn-cancel-blue {
+      background: #0d47a1;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .btn-cancel-blue:hover {
+      background: #0a3875;
+    }
+
+    /* Option green selection */
+    .options label.selected {
+      background: #e8f5e9;
+      border-color: #4caf50;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="main">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+        <h2 style="margin: 0;">Mock Test - 100 Questions</h2>
+        <div style="display: flex; gap: 8px;">
+          <a href="/dashboard" style="background:#00796b; color:white; padding:6px 14px; text-decoration:none; border-radius:4px; font-size:12px; font-weight:bold;">Dashboard</a>
+          <a href="/logout" style="background:#c82333; color:white; padding:6px 14px; text-decoration:none; border-radius:4px; font-size:12px; font-weight:bold;">Logout</a>
+        </div>
+      </div>
+      <form id="testForm" method="post" action="/submit">
+        <input type="hidden" name="total" value="{{ total }}">
+
+        {% for q in questions %}
+        <div class="question" id="q{{ q._num }}" data-qnum="{{ q._num }}" style="{{ 'display:block;' if loop.first else 'display:none;' }}">
+          <div class="q-top">
+            <div class="q-header">Question <span class="q-index">{{ q._num }}</span>:</div>
+          </div>
+          <div class="q-body">{{ q.question }}</div>
+          <div class="options">
+            {% if q.options %}
+              {% for opt in q.options %}
+                <label class="opt-label">
+                  <input type="radio" name="q{{ q._num }}" value="{{ loop.index0 }}">
+                  <span class="opt-text">{{ loop.index }}. {{ opt }}</span>
+                </label>
+              {% endfor %}
+            {% else %}
+              <div class="no-options">No options available for this question.</div>
+            {% endif %}
+          </div>
+          <!-- Hidden fields for submission -->
+          <input type="hidden" name="question_{{ q._num }}" value="{{ q.question }}">
+          {% for opt_idx in range(q.options|length) %}
+          <input type="hidden" name="option_{{ q._num }}_{{ opt_idx }}" value="{{ q.options[opt_idx] }}">
+          {% endfor %}
+          <input type="hidden" name="correct_{{ q._num }}" value="{{ q.answer if q.answer is not none else '-1' }}">
+          <input type="hidden" name="correct_text_{{ q._num }}"
+            value="{{ q.options[q.answer] if (q.answer is not none and q.answer >= 0 and q.options) else '' }}">
+          <input type="hidden" name="explanation_{{ q._num }}" value="{{ q.explanation | default('') }}">
+        </div>
+        {% endfor %}
+
+        <div class="controls">
+          <button type="button" id="saveBtn" class="btn primary">Save</button>
+          <button type="button" id="saveNextBtn" class="btn primary">Save &amp; Next</button>
+          <button type="button" id="markBtn" class="btn">Save &amp; Mark as Review</button>
+          <button type="button" id="clearBtn" class="btn danger">Clear</button>
+          <button type="button" id="finishBtn" class="btn danger">Finish Exam</button>
+        </div>
+      </form>
+    </div>
+
+    <aside class="sidebar">
+      <h3>Question Palette</h3>
+      <div class="legend">
+        <span class="legend-item"><em class="box not-visited"></em> Not Visited</span>
+        <span class="legend-item"><em class="box answered"></em> Answered</span>
+        <span class="legend-item"><em class="box review"></em> Marked As Review</span>
+        <span class="legend-item"><em class="box current"></em> Current</span>
+      </div>
+      <div id="palette" class="grid">
+        {% for q in range(1, total+1) %}
+        <button type="button" data-q="{{ q }}" class="pal not-visited">{{ q }}</button>
+        {% endfor %}
+      </div>
+    </aside>
+  </div>
+
+  <!-- ── Finish Exam Confirmation Modal (Matching Images 2 & 3) ── -->
+  <div id="finishModal">
+    <div class="modal-dialog">
+      <div class="modal-top-header">
+        <span>Confirm Final Submission / अंतिम रूप से जमा करें</span>
+        <button type="button" class="modal-close-btn" id="modalCloseTop">Close</button>
+      </div>
+
+      <div class="modal-content-area">
+        <div class="attempt-summary-heading" id="attemptCountDisplay">
+          You have attempted 0 out of {{ total }}
+        </div>
+
+        <!-- 10 tables: 5 top row (1-50), 5 bottom row (51-100) -->
+        <div class="tables-matrix">
+          {% for col in range(10) %}
+          <div class="sub-table-card">
+            <table>
+              <thead>
+                <tr>
+                  <th>Question</th>
+                  <th>Answer</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in range(10) %}
+                {% set qnum = col * 10 + row + 1 %}
+                {% if qnum <= total %}
+                <tr>
+                  <td class="q-cell" onclick="jumpToQuestion({{ qnum }})">{{ qnum }}</td>
+                  <td class="ans-cell" id="sub-table-ans-{{ qnum }}"></td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% endfor %}
+        </div>
+
+        <div class="submission-prompt">
+          <div class="prompt-en-main">Do you want to Finish and submit the exam</div>
+          <div class="prompt-en-sub">Once submitted you will not be able to change answers.</div>
+          <div class="prompt-hi-main">जमा एवं समाप्त करने हेतु आश्वस्त हैं ?</div>
+          <div class="prompt-hi-sub">एक बार Final submit / जमा करने के बाद आप पुनः उत्तर नहीं बदल पाएंगे|</div>
+        </div>
+      </div>
+
+      <div class="modal-bottom-actions">
+        <button type="button" class="btn-submit-red" id="btnConfirmSubmit">Final Submit / जमा करें</button>
+        <button type="button" class="btn-cancel-blue" id="btnCancelModal">Cancel / रद्द करें</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const total = {{ total }};
+    let current = 1;
+
+    function showQuestion(n) {
+      if (n < 1 || n > total) return;
+      const prev = document.getElementById('q' + current);
+      if (prev) prev.style.display = 'none';
+      const next = document.getElementById('q' + n);
+      if (next) next.style.display = 'block';
+      document.querySelectorAll('#palette .pal').forEach(b => b.classList.remove('current'));
+      const pal = document.querySelector('#palette .pal[data-q="' + n + '"]');
+      if (pal) pal.classList.add('current');
+      current = n;
+    }
+
+    function saveCurrent(markAsReview = false) {
+      const qDiv = document.getElementById('q' + current);
+      const chosen = qDiv.querySelector('input[type=radio]:checked');
+      const pal = document.querySelector('#palette .pal[data-q="' + current + '"]');
+      pal.classList.remove('not-visited', 'visited', 'answered', 'review');
+      if (markAsReview) {
+        pal.classList.add('review');
+      } else if (chosen) {
+        pal.classList.add('answered');
+      } else {
+        pal.classList.add('visited');
+      }
+    }
+
+    document.getElementById('saveBtn').addEventListener('click', () => saveCurrent(false));
+    document.getElementById('saveNextBtn').addEventListener('click', () => {
+      saveCurrent(false);
+      if (current < total) showQuestion(current + 1);
+    });
+    document.getElementById('markBtn').addEventListener('click', () => {
+      saveCurrent(true);
+      if (current < total) showQuestion(current + 1);
+    });
+
+    // Highlight selected option
+    document.querySelectorAll('.options label input').forEach(inp => {
+      inp.addEventListener('change', () => {
+        const qDiv = inp.closest('.question');
+        qDiv.querySelectorAll('.options label').forEach(lbl => lbl.classList.remove('selected'));
+        inp.parentElement.classList.add('selected');
+        // also mark palette as answered
+        const pal = document.querySelector('#palette .pal[data-q="' + current + '"]');
+        if (pal && !pal.classList.contains('review')) {
+          pal.classList.remove('not-visited', 'visited');
+          pal.classList.add('answered');
+        }
+      });
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      const qDiv = document.getElementById('q' + current);
+      qDiv.querySelectorAll('input[type=radio]').forEach(r => r.checked = false);
+      qDiv.querySelectorAll('.options label').forEach(lbl => lbl.classList.remove('selected'));
+      const pal = document.querySelector('#palette .pal[data-q="' + current + '"]');
+      if (pal) {
+        pal.classList.remove('answered', 'review', 'visited');
+        pal.classList.add('not-visited');
+      }
+    });
+
+    // Palette click
+    document.querySelectorAll('#palette .pal').forEach(b => b.addEventListener('click', e => {
+      const n = parseInt(e.currentTarget.getAttribute('data-q'));
+      showQuestion(n);
+    }));
+
+    // Start with question 1
+    showQuestion(1);
+
+    // ── Finish Exam Button -> Show Confirmation Modal ───────────────────────
+    document.getElementById('finishBtn').addEventListener('click', () => {
+      let attempted = 0;
+      for (let q = 1; q <= total; q++) {
+        const qDiv = document.getElementById('q' + q);
+        const cell = document.getElementById('sub-table-ans-' + q);
+        if (qDiv && cell) {
+          const checked = qDiv.querySelector('input[type=radio]:checked');
+          if (checked) {
+            // value is 0, 1, 2, 3 -> display 1, 2, 3, 4
+            cell.textContent = parseInt(checked.value) + 1;
+            attempted++;
+          } else {
+            cell.textContent = '';
+          }
+        }
+      }
+
+      document.getElementById('attemptCountDisplay').textContent =
+        'You have attempted ' + attempted + ' out of ' + total;
+
+      document.getElementById('finishModal').style.display = 'block';
+    });
+
+    function jumpToQuestion(qnum) {
+      document.getElementById('finishModal').style.display = 'none';
+      showQuestion(qnum);
+    }
+
+    document.getElementById('modalCloseTop').addEventListener('click', () => {
+      document.getElementById('finishModal').style.display = 'none';
+    });
+
+    document.getElementById('btnCancelModal').addEventListener('click', () => {
+      document.getElementById('finishModal').style.display = 'none';
+    });
+
+    document.getElementById('btnConfirmSubmit').addEventListener('click', () => {
+      document.getElementById('testForm').submit();
+    });
+  </script>
+</body>
+</html>
